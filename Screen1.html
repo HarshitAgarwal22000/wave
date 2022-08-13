@@ -6,12 +6,17 @@
         <link rel="stylesheet" href="styles.css" >
     </head>
     <body>
+        
+        <div>
         <center>
-        <input type="text" required id="inp" placeholder="Enter a number to start!" style="display:block ; margin: 10%;"/>
-        <button id="start" class="glow-on-hover" >Go!</button>
+        <input type="text" required id="inp" placeholder="Input a number" style="display:block ; margin: 10%;text-align: center;"/>
+        <div id="error"></div>
+        <button id="start" class="glow-on-hover" >Ready?</button>
     </center>
+</div>
     </body>
     <script>
+        let note="";
         document.getElementById("start").style.visibility="hidden";
         document.getElementById("inp").oninput=function()
         {
@@ -19,15 +24,25 @@
             if(document.getElementById("inp").value==''||document.getElementById("inp").value==null)
         {
             document.getElementById("start").style.visibility="hidden";
+            note=document.getElementById("error");
+            note.style.color='yellow';
+            note.innerHTML="Enter a number to start";
+
+
         }
         else
         {
+            note.innerHTML="";
             document.getElementById("start").style.visibility="visible";  
         }
         }
-        document.getElementById("start").onclick=function()
+        document.getElementById("start").onmouseover=function()
         {
-        console.log(w);
+        document.getElementById("start").innerHTML="Go!";
+        }
+        document.getElementById("start").onmouseleave=function()
+        {
+            document.getElementById("start").innerHTML="Ready?";
         }
     </script>
 </html>
