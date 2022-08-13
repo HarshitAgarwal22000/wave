@@ -3,11 +3,31 @@
     <head>
         <title>Waves</title>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.css" >
     </head>
     <body>
         <center>
-        <input type="text" required id="inp" placeholder="Enter a number to start!" />
-        <button id="start">Go!</button>
+        <input type="text" required id="inp" placeholder="Enter a number to start!" style="display:block ; margin: 10%;"/>
+        <button id="start" class="glow-on-hover" >Go!</button>
     </center>
     </body>
+    <script>
+        document.getElementById("start").style.visibility="hidden";
+        document.getElementById("inp").oninput=function()
+        {
+            console.log(document.getElementById("inp").value);
+            if(document.getElementById("inp").value==''||document.getElementById("inp").value==null)
+        {
+            document.getElementById("start").style.visibility="hidden";
+        }
+        else
+        {
+            document.getElementById("start").style.visibility="visible";  
+        }
+        }
+        document.getElementById("start").onclick=function()
+        {
+        console.log(w);
+        }
+    </script>
 </html>
