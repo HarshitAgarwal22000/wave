@@ -33,7 +33,7 @@
         else
         {
             note.innerHTML="";
-            document.getElementById("start").style.visibility="visible";  
+            document.getElementById("start").style.visibility="visible"; 
         }
         }
         document.getElementById("start").onmouseover=function()
@@ -43,6 +43,12 @@
         document.getElementById("start").onmouseleave=function()
         {
             document.getElementById("start").innerHTML="Ready?";
+        }
+        document.getElementById("start").onclick=function()
+        {
+            let l=document.getElementById("inp").value;
+            localStorage.setItem("User",l); 
+            location.href="./Tiles.html";
         }
     </script>
 </html>
