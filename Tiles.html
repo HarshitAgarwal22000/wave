@@ -37,6 +37,7 @@
         let count=0;
         let index;
         let rp;
+        let num1;
         let x=localStorage.getItem("User");
         for(i=0;i<x;i++)
         {
@@ -59,7 +60,8 @@
                 f.style.backgroundColor="#ACB6E5";
                 f.className=sounds[index];
                 let z=100/x;
-                f.innerHTML="jjksdk";
+                f.innerHTML="kkksdk";
+                f.style.color="#ACB6E5";
                 f.style.margin="1%";
                 document.getElementById(i).appendChild(f);
             }
@@ -68,6 +70,7 @@
         let inde=0;
         let co=0;
         let max=-1;
+        let num;
         let colorr=["red","green","orange","yellow","blue","pink"];
         let b=[];
         window.onmouseover=function(e)
@@ -75,6 +78,9 @@
             console.log(e.target.name);
             console.log(e.target.id);
             console.log(e.target.className);
+            console.log(e.target.id.length);
+            if(e.target.id.length==3)
+            {
             if(e.target.id[2]>max )
             {
                 b.push(e.target.id);
@@ -84,42 +90,50 @@
                 {
 
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("do").play();
                 
                 }
                 else if(e.target.className=="re")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("re").play();
                 }
                 else if(e.target.className=="ga")
                 {
                     e.target.style.backgroundColor=colorr[inde];
+                    e.target.style.color=colorr[inde];
                     document.getElementById("mi").play();
                 }
                 else if(e.target.className=="ma")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("fa").play();
                 }
                 else if(e.target.className=="pa")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("so").play();
                 }
                 else if(e.target.className=="dha")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("la").play();
                 }
                 else if(e.target.className=="ni")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("ti").play();
                 }
                 else if(e.target.className=="saa")
                 {
                 e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
                 document.getElementById("doo").play();
                 }
                 max=e.target.id[2];
@@ -133,6 +147,149 @@
             else
             {
         }
+    }
+    else if(e.target.id.length==4)
+    {
+        num=Number(e.target.id[2]+e.target.id[3]);
+
+        if(num>max )
+            {
+                b.push(e.target.id);
+                inde=co%colorr.length;
+                co++;
+                if(e.target.className=="sa")
+                {
+
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("do").play();
+                
+                }
+                else if(e.target.className=="re")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("re").play();
+                }
+                else if(e.target.className=="ga")
+                {
+                    e.target.style.backgroundColor=colorr[inde];
+                    e.target.style.color=colorr[inde];
+                    document.getElementById("mi").play();
+                }
+                else if(e.target.className=="ma")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("fa").play();
+                }
+                else if(e.target.className=="pa")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("so").play();
+                }
+                else if(e.target.className=="dha")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("la").play();
+                }
+                else if(e.target.className=="ni")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("ti").play();
+                }
+                else if(e.target.className=="saa")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("doo").play();
+                }
+                max=num;
+                if(max==x-1)
+                {
+                    console.log("last");
+                    console.log(e.target.id[2]);
+                    max=-1;
+                }
+            }
+            else
+            {
+        }
+    }
+    else if(e.target.id.length==5)
+    {
+        num1=Number(e.target.id[3]+e.target.id[4]);
+
+        if(num1>max )
+            {
+                b.push(e.target.id);
+                inde=co%colorr.length;
+                co++;
+                if(e.target.className=="sa")
+                {
+
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("do").play();
+                
+                }
+                else if(e.target.className=="re")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("re").play();
+                }
+                else if(e.target.className=="ga")
+                {
+                    e.target.style.backgroundColor=colorr[inde];
+                    e.target.style.color=colorr[inde];
+                    document.getElementById("mi").play();
+                }
+                else if(e.target.className=="ma")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("fa").play();
+                }
+                else if(e.target.className=="pa")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("so").play();
+                }
+                else if(e.target.className=="dha")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("la").play();
+                }
+                else if(e.target.className=="ni")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("ti").play();
+                }
+                else if(e.target.className=="saa")
+                {
+                e.target.style.backgroundColor=colorr[inde];
+                e.target.style.color=colorr[inde];
+                document.getElementById("doo").play();
+                }
+                max=num1;
+                if(max==x-1)
+                {
+                    console.log("last");
+                    console.log(e.target.id[2]);
+                    max=-1;
+                }
+            }
+            else
+            {
+        }
+    }
         }
         document.getElementById("rl").onclick=function()
         {
@@ -140,6 +297,7 @@
             for(let q=0;q<b.length;q++)
             {
                 document.getElementById(b[q]).style.backgroundColor="#ACB6E5";
+                document.getElementById(b[q]).style.color="#ACB6E5";
             }
             b=[];
         }
