@@ -18,14 +18,15 @@
         <Audio id="ti" src="./316908__jaz-the-man-2__re.wav" controls type="wav" style="visibility:hidden;"></Audio>
         <Audio id="doo" src="./316898__jaz-the-man-2__do.wav" controls type="wav" style="visibility:hidden;"></Audio>
         <center>
-            <button id="relo">Reload</button>
+            <button id="rl">Reload</button>
         </center>
-        <center>
-        <div id="-3">
+      <center>
+        <div id="-3" style="height: 100%; width:85%; background-color: #40436c;">
 
         </div>
+        </center>
         
-    </center>
+    
     </body>
     <script>
         let f;
@@ -42,25 +43,24 @@
             y=document.createElement("div");
             y.style.display="block";
             y.id=Number(i);
-            y.style.backgroundColor="green";
+            y.style.backgroundColor="#40436c";
+            y.style.margin="1%";
+
             document.getElementById("-3").appendChild(y);
             for(j=0;j<x;j++)
             {
                 index=count%sounds.length;
                 count++;
                 rp=i+" "+j;
-                
                 f=document.createElement("div");
                 f.id=rp;
-                f.tagName="tiles";
+                f.name="tiles";
                 f.style.display="inline";
-                f.style.backgroundColor="black";
+                f.style.backgroundColor="#ACB6E5";
                 f.className=sounds[index];
                 let z=100/x;
-                f.style.width="z%";
-                f.style.height="z%";
-                f.innerHTML="j";
-                f.style.margin="5%";
+                f.innerHTML="jjksdk";
+                f.style.margin="1%";
                 document.getElementById(i).appendChild(f);
             }
             count=0;
@@ -68,13 +68,16 @@
         let inde=0;
         let co=0;
         let max=-1;
-        let colorr=["red","green","orange","yellow","blue"];
+        let colorr=["red","green","orange","yellow","blue","pink"];
+        let b=[];
         window.onmouseover=function(e)
         {
-            console.log(max);
-            if(e.target.id[2]>max)
+            console.log(e.target.name);
+            console.log(e.target.id);
+            console.log(e.target.className);
+            if(e.target.id[2]>max )
             {
-                
+                b.push(e.target.id);
                 inde=co%colorr.length;
                 co++;
                 if(e.target.className=="sa")
@@ -131,9 +134,14 @@
             {
         }
         }
-        document.getElementById("relo").onclick=function()
+        document.getElementById("rl").onclick=function()
         {
             max=-1;
+            for(let q=0;q<b.length;q++)
+            {
+                document.getElementById(b[q]).style.backgroundColor="#ACB6E5";
+            }
+            b=[];
         }
     </script>
     </html>
