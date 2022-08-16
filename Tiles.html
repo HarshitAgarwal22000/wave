@@ -20,11 +20,11 @@
         <center>
             <button id="rl">Reload</button>
         </center>
-      <center>
-        <div id="-3" style="height: 100%; width:85%; background-color: #40436c;">
+     <center>
+        <div id="-3" style="height: 100%; width:85%; background-color: #40436c; padding: 1%;">
 
         </div>
-        </center>
+    </center>
         
     
     </body>
@@ -39,6 +39,10 @@
         let rp;
         let num1;
         let x=localStorage.getItem("User");
+        if(x>16)
+        {
+            x=16;
+        }
         for(i=0;i<x;i++)
         {
             y=document.createElement("div");
@@ -71,7 +75,7 @@
         let co=0;
         let max=-1;
         let num;
-        let colorr=["red","green","orange","yellow","blue","pink"];
+        let colorr=["red","green","orange","yellow","blue","pink","#ff007b","#5be7a9"];
         let b=[];
         window.onmouseover=function(e)
         {
