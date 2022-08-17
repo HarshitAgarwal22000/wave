@@ -9,15 +9,21 @@
         <link rel="stylesheet" href="styl.css">
     </head>
     <body>
-        <Audio id="do"src="./316898__jaz-the-man-2__do.wav" controls type="wav" style="visibility:hidden ;"></Audio>
-        <Audio id="re" src="./316908__jaz-the-man-2__re.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="mi" src="./316906__jaz-the-man-2__mi.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="fa" src="./316904__jaz-the-man-2__fa.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="so" src="./316912__jaz-the-man-2__sol.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="la" src="./316902__jaz-the-man-2__la.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="ti" src="./316908__jaz-the-man-2__re.wav" controls type="wav" style="visibility:hidden;"></Audio>
-        <Audio id="doo" src="./316898__jaz-the-man-2__do.wav" controls type="wav" style="visibility:hidden;"></Audio>
+        <Audio id="do"src="./316898__jaz-the-man-2__do.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="re" src="./316908__jaz-the-man-2__re.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="mi" src="./316906__jaz-the-man-2__mi.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="fa" src="./316904__jaz-the-man-2__fa.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="so" src="./316912__jaz-the-man-2__sol.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        
+        <Audio id="la" src="./316902__jaz-the-man-2__la.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="ti" src="./316908__jaz-the-man-2__re.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
+        <Audio id="doo" src="./316898__jaz-the-man-2__do.wav" controls type="wav" style="visibility:hidden; height: 2%;"></Audio>
         <center>
+            <div >Current Score</div>
+            <div id="score">0</div>
+          <hr>
+          <br>
+          <br>
             <button id="rl">Reload</button>
         </center>
      <center>
@@ -37,6 +43,7 @@
         let count=0;
         let index;
         let rp;
+        let  counter=0;
         let num1;
         let x=localStorage.getItem("User");
         if(x>16)
@@ -85,8 +92,11 @@
             console.log(e.target.id.length);
             if(e.target.id.length==3)
             {
+                
             if(e.target.id[2]>max )
             {
+                counter++;
+                document.getElementById("score").innerHTML=counter;
                 b.push(e.target.id);
                 inde=co%colorr.length;
                 co++;
@@ -154,10 +164,13 @@
     }
     else if(e.target.id.length==4)
     {
+        
         num=Number(e.target.id[2]+e.target.id[3]);
 
         if(num>max )
             {
+                counter++;
+        document.getElementById("score").innerHTML=counter;
                 b.push(e.target.id);
                 inde=co%colorr.length;
                 co++;
@@ -225,10 +238,13 @@
     }
     else if(e.target.id.length==5)
     {
+        
         num1=Number(e.target.id[3]+e.target.id[4]);
 
         if(num1>max )
             {
+                counter++;
+        document.getElementById("score").innerHTML=counter;
                 b.push(e.target.id);
                 inde=co%colorr.length;
                 co++;
@@ -302,6 +318,8 @@
             {
                 document.getElementById(b[q]).style.backgroundColor="#ACB6E5";
                 document.getElementById(b[q]).style.color="#ACB6E5";
+                counter=0;
+                document.getElementById("score").innerHTML=counter;
             }
             b=[];
         }
