@@ -1,4 +1,4 @@
 # Tiles and Waves
-##A project by Harshit Agarwal
+## A project by Harshit Agarwal
 
 
